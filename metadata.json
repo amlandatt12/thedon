@@ -1,0 +1,8 @@
+{
+  "name": "Z Tools",
+  "description": "The ultimate suite of 1000+ client-side utilities for developers, designers, and productivity enthusiasts. Privacy-first, offline-capable, and blazing fast.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

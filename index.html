@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Z Tools | The Ultimate Web Utility Kit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            },
+            accent: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar for futuristic feel */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+    }
+  </style>
+  <!-- SystemJS & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.14.1/system.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.14.1/extras/amd.min.js"></script>
+  <script type="systemjs-importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@18.2.0",
+      "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+      "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+      "lucide-react": "https://esm.sh/lucide-react@0.292.0",
+      "react-router-dom": "https://esm.sh/react-router-dom@6.20.0"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
+  <div id="root"></div>
+  <script>
+    System.config({
+      transpiler: 'plugin-babel',
+      meta: {
+        '*.tsx': { loader: 'plugin-babel' },
+        '*.ts': { loader: 'plugin-babel' },
+        '*.css': { loader: 'css' }
+      },
+      map: {
+        'plugin-babel': 'https://cdnjs.cloudflare.com/ajax/libs/systemjs-plugin-babel/0.0.25/plugin-babel.js',
+        'systemjs-babel-build': 'https://cdnjs.cloudflare.com/ajax/libs/systemjs-plugin-babel/0.0.25/systemjs-babel-browser.js',
+        'css': 'https://cdnjs.cloudflare.com/ajax/libs/systemjs-plugin-css/0.1.37/css.js'
+      },
+      packages: {
+        '': { defaultExtension: 'tsx' }
+      }
+    });
+    System.import('./index.tsx').catch(console.error);
+  </script>
+</body>
+
+</html>
